@@ -35,7 +35,6 @@ function concatenateStrings(value1, value2) {
  */
 function getStringLength(value) {
   return value.length;
-  throw new Error('Not implemented');
 }
 
 /**
@@ -53,7 +52,6 @@ function getStringLength(value) {
  */
 function getStringFromTemplate(firstName, lastName) {
   return `Hello, ${firstName} ${lastName}!`;
-  throw new Error('Not implemented');
 }
 
 /**
@@ -67,8 +65,7 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-
-  throw new Error('Not implemented');
+  return value.replace('Hello, ', '').replace('!', '');
 }
 
 
@@ -84,7 +81,6 @@ function extractNameFromTemplate(value) {
  */
 function getFirstChar(value) {
   return value[0];
-  throw new Error('Not implemented');
 }
 
 /**
@@ -98,8 +94,8 @@ function getFirstChar(value) {
  *   'cat'              => 'cat'
  *   '\tHello, World! ' => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingAndTrailingWhitespaces(value) {
+  return value.trim();
 }
 
 /**
@@ -113,8 +109,12 @@ function removeLeadingAndTrailingWhitespaces(/* value */) {
  *   'A', 5  => 'AAAAA'
  *   'cat', 3 => 'catcatcat'
  */
-function repeatString(/* value, count */) {
-  throw new Error('Not implemented');
+function repeatString(value, count) {
+  let result = '';
+  for (let i = 0; i < count; i += 1) {
+    result = value + result;
+  }
+  return result;
 }
 
 /**
@@ -129,8 +129,8 @@ function repeatString(/* value, count */) {
  *   'I like legends', 'end' => 'I like legs',
  *   'ABABAB','BA' => 'ABAB'
  */
-function removeFirstOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeFirstOccurrences(str, value) {
+  return str.replace(value, '');
 }
 
 /**
@@ -144,8 +144,8 @@ function removeFirstOccurrences(/* str, value */) {
  *   '<span>' => 'span'
  *   '<a>' => 'a'
  */
-function unbracketTag(/* str */) {
-  throw new Error('Not implemented');
+function unbracketTag(str) {
+  return str.replace('<', '').replace('>', '');
 }
 
 
@@ -159,8 +159,8 @@ function unbracketTag(/* str */) {
  *   'Thunderstruck' => 'THUNDERSTRUCK'
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
-function convertToUpperCase(/* str */) {
-  throw new Error('Not implemented');
+function convertToUpperCase(str) {
+  return str.toUpperCase();
 }
 
 /**
